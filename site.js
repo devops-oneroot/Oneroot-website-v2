@@ -37,6 +37,9 @@
     box.addEventListener('mouseleave',function(){paused=false;});
     restart();
   }
+  var mt=document.getElementById('mnav');
+  if(mt){document.querySelectorAll('.mmenu a').forEach(function(a){a.addEventListener('click',function(){mt.checked=false;});});
+    document.addEventListener('keydown',function(e){if(e.key==='Escape')mt.checked=false;});}
   var f=document.getElementById('brandForm');
   if(f){
     var ph=f.elements.phone, nm=f.elements.name;
