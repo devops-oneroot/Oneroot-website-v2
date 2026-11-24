@@ -194,7 +194,9 @@
         if(n) n.textContent=j.title;
         if(dp) dp.textContent=j.department;
         if(lc[1]) lc[1].textContent=j.location;
-        a.title=[j.experience?'Experience: '+j.experience:'',j.employmentType||''].filter(Boolean).join(' · ');
+        // Experience and Type columns; a dash when no experience is set.
+        if(lc[2]) lc[2].textContent=(j.experience||'').trim()||'—';
+        if(lc[3]) lc[3].textContent=j.employmentType||'Full-time';
         delete a.dataset.subject; delete a.dataset.mail;
         if(apply) toApply(a);
         frag.appendChild(a);
