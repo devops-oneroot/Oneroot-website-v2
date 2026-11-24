@@ -25,3 +25,8 @@ Before going public
      use the live OneRoot backend (site.js: https://contract-farming-backend-v2-lra6.onrender.com).
      Enquiries are emailed to procurement@oneroot.farm through Brevo (keys set on
      the backend). Roles are managed in the dashboard under Management > Jobs.
+
+After changing site.js
+  Cloudflare tells browsers to keep site.js for 4 hours. Change the ?v= value
+  in <script src="site.js?v=..."> on every page (e.g. to the new commit id),
+  or visitors keep running the old script until it expires.
